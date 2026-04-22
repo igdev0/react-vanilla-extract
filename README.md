@@ -1,73 +1,31 @@
-# React + TypeScript + Vite
+# React Vanilla Extract
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight styling system built on top of [Vanilla Extract](chatgpt://generic-entity?number=0) and React.
 
-Currently, two official plugins are available:
+It explores a component-driven API with support for variants, composable styles, and type-safe design patterns—without runtime CSS overhead.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- 🧩 Component-first styling approach
+- 🎯 Variant-based API (inspired by modern design systems)
+- ⚡ Zero-runtime CSS (powered by Vanilla Extract)
+- 🛠 Fully typed with TypeScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Status
 
-## Expanding the ESLint configuration
+🚧 This project is currently on hold.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The core ideas are implemented, but the system is not production-ready yet. It may be revisited in the future.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Why this exists
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+This project started as an experiment to bridge the gap between low-level tools like [Vanilla Extract](chatgpt://generic-entity?number=1) and higher-level systems like [Panda CSS](chatgpt://generic-entity?number=2) or [Stitches](chatgpt://generic-entity?number=3).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The goal was to explore:
+- building a variant system from scratch
+- improving developer experience
+- keeping everything fully static
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Disclaimer
 
-```js
-// eslint.theme.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This is not actively maintained. If you're looking for a production-ready solution, consider using a mature library instead.
